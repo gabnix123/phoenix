@@ -1,0 +1,81 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "phoenix"
+version = "0.1.0"
+description = "A unified, privacy-first, open-source ecosystem of tools for media consumption, network security, and digital self-defense"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Phoenix Contributors"}
+]
+keywords = ["privacy", "security", "media", "terminal", "cli"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Internet",
+    "Topic :: Multimedia",
+    "Topic :: Security",
+]
+
+# Dependencies for the core platform
+dependencies = [
+    "click>=8.0",
+    "rich>=10.0",
+    "pyyaml>=6.0",
+    "requests>=2.25",
+    "python-dotenv>=0.19",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black>=22.0",
+    "flake8>=4.0",
+    "mypy>=0.9",
+    "pre-commit>=2.15",
+]
+songbird = [
+    "mutagen>=1.47",
+    "pydub>=0.25",
+    "pillow>=10.0",
+    "ascii_magic>=0.3.0",
+    "appdirs>=1.4.4",
+]
+projector = [
+    "mutagen>=1.47",
+    "pillow>=10.0",
+]
+cipher = [
+    "cryptography>=4.0",
+    "scapy>=2.5",
+    "netifaces>=0.11",
+]
+vinyl = [
+    "pyzbar>=0.1.9",
+    "pillow>=10.0",
+]
+full = [
+    "mutagen>=1.47",
+    "pydub>=0.25",
+    "pillow>=10.0",
+    "ascii_magic>=0.3.0",
+    "appdirs>=1.4.4",
+    "cryptography>=4.0",
+    "scapy>=2.5",
+    "netifaces>=0.11",
+    "pyzbar>=0.1.9",
+]
+
+[project.scripts]
+whispernet = "phoenix.whispernet.cli:main"

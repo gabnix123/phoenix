@@ -1,0 +1,1 @@
+"""WHISPERNET module."""
